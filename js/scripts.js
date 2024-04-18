@@ -30,3 +30,22 @@ var interesses = $("#interesses li");
 $.each(interesses, function(chave, valor) {
     console.log($(valor).text());
 })                    
+
+$("input[name='interesse']").change(function() {
+
+    var checkboxes_selecionados = $("input[name='interesse']:checked");
+    var textos = [];
+    
+    $.each(checkboxes_selecionados, function( index, value ) {
+        
+        textos.push($(value).parent("span").text());
+    
+    });
+    
+    console.log(textos);
+    
+});
+
+$('#nome').on('input', function() {
+    $("#confirmar").css("display", "flex");
+})
